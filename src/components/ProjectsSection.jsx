@@ -117,7 +117,7 @@ function FilterBar({ showFeatured, onChange, featuredCount }) {
 }
 
 // ─── Componente principal ─────────────────────────────────────────────────────
-export default function ProjectsCarousel() {
+export default function ProjectsSection() {
   const [showFeatured, setShowFeatured] = useState(false);
   const swiperRef = useRef(null);
 
