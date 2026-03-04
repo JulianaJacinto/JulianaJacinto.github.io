@@ -139,7 +139,7 @@ export default function AboutSection() {
         {/* ── Cabeçalho da seção ──────────────────────────────────────────── */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-10 bg-gradient-to-b from-lime-400 to-lime-600 rounded-full" aria-hidden="true" />
+            <div className="w-1 h-10 bg-lime-600 rounded-full" aria-hidden="true" />
             <h2
               id="sobre-title"
               className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight"

@@ -56,7 +56,7 @@ function DecorativeBackground() {
         w-[700px] h-[300px] bg-lime-500/4 rounded-full blur-3xl" />
 
       {/* Linha separadora topo */}
-      <div className="absolute top-0 inset-x-0 h-px
+      <div className="absolute top-0 inset-x-0 h-1
         bg-gradient-to-r from-transparent via-lime-500/25 to-transparent" />
     </div>
   );
@@ -179,7 +179,7 @@ export default function ProjectsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-1 h-10 bg-gradient-to-b from-lime-400 to-lime-600 rounded-full" />
+              <div className="w-1 h-10 bg-lime-600 rounded-full" />
               <h2
                 id="projetos-title"
                 className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight"

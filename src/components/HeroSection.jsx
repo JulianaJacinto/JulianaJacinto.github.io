@@ -139,7 +139,7 @@ function AvailableBadge() {
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
-  const fullText = "Desenvolvedora Web · Front-End · React & Tailwind";
+  const fullText = "Desenvolvedora Web | Front-End | React & Tailwind";
   const { displayedText, isComplete } = useTypewriter(fullText, 35);
 
   return (
@@ -229,7 +229,7 @@ export default function HeroSection() {
               style={{ animation: "heroFadeUp 0.6s ease-out 0.5s both" }}
             >
               <a
-                href="JulianaJacinto_currículo2026.pdf"
+                href="src/assets/JulianaJacinto_curriculo2026.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"

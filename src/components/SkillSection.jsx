@@ -247,7 +247,7 @@ function SectionHeader() {
         Minhas <span className="text-lime-400">Habilidades</span>
       </h2>
       <div className="flex justify-center mb-5">
-        <div className="h-1 w-24 bg-lime-400 rounded-full" />
+        <div className="h-1 w-24 bg-lime-600 rounded-full" />
       </div>
       <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
         Aqui estão minhas principais habilidades e tecnologias — além de outras

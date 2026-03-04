@@ -135,7 +135,7 @@ export default function ProjectCard({ project }) {
         </h3>
 
         {/* Descrição */}
-        <p className="text-sm text-slate-400 leading-relaxed line-clamp-3 flex-1">
+        <p className="text-sm text-slate-400 leading-relaxed flex-1">
           {project.description}
         </p>
 
