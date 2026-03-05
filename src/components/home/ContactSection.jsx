@@ -76,51 +76,6 @@ function useInView(options = {}) {
   return { ref, inView };
 }
 
-// ─── Fundo: aurora ────────────────────────────────────────────────────────────
-function AuroraBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <style>{`
-        @keyframes auroraA {
-          0%,100% { transform: translate(0,0) scale(1); }
-          33%      { transform: translate(60px,-40px) scale(1.1); }
-          66%      { transform: translate(-30px,30px) scale(0.95); }
-        }
-        @keyframes auroraB {
-          0%,100% { transform: translate(0,0) scale(1); }
-          33%      { transform: translate(-50px,30px) scale(1.08); }
-          66%      { transform: translate(40px,-20px) scale(1.05); }
-        }
-        @keyframes auroraC {
-          0%,100% { transform: translate(0,0) scale(1); }
-          50%      { transform: translate(30px,50px) scale(1.12); }
-        }
-      `}</style>
-
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full
-        bg-lime-500/10 blur-[100px]"
-        style={{ animation: "auroraA 12s ease-in-out infinite" }} />
-      <div className="absolute top-1/3 -right-32 w-[500px] h-[500px] rounded-full
-        bg-emerald-500/8 blur-[120px]"
-        style={{ animation: "auroraB 15s ease-in-out infinite" }} />
-      <div className="absolute -bottom-32 left-1/3 w-[400px] h-[400px] rounded-full
-        bg-lime-400/6 blur-[90px]"
-        style={{ animation: "auroraC 10s ease-in-out infinite" }} />
-
-      <svg className="absolute inset-0 w-full h-full opacity-[0.03]">
-        <filter id="contact-noise">
-          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#contact-noise)" />
-      </svg>
-
-      <div className="absolute top-0 inset-x-0 h-px
-        bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
-    </div>
-  );
-}
-
 // ─── Campo de formulário ──────────────────────────────────────────────────────
 function Field({ label, id, children }) {
   return (
@@ -312,7 +267,21 @@ export default function ContactSection() {
       className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950
         py-20 sm:py-28 overflow-hidden"
     >
-      <AuroraBackground />
+      {/* Padrão de pontos */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.07]">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" className="text-lime-500" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+          </svg>
+        </div>
+
+        {/* Linha de separação topo */}
+      <div className="absolute top-0 inset-x-0 h-1
+        bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
@@ -325,11 +294,11 @@ export default function ContactSection() {
           <div className="flex items-center gap-3 mb-3">
             <div className="w-1 h-10 bg-gradient-to-b from-lime-400 to-lime-600 rounded-full" />
             <h2 id="contato-title"
-              className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight">
+              className="text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
               Entre em <span className="text-lime-400">Contato</span>
             </h2>
           </div>
-          <p className="text-slate-400 text-lg ml-4 pl-3 border-l border-slate-800">
+          <p className="text-slate-400 text-base ml-4 pl-3 border-l border-slate-800">
             Tem um projeto em mente ou quer trabalhar juntos? Me envie uma mensagem!
           </p>
         </div>

@@ -52,52 +52,36 @@ function useInView(options = {}) {
   return { ref, inView };
 }
 
-// ─── Fundo: grade de linhas estilo tech ──────────────────────────────────────
-function TechGridBackground() {
+// ─── Fundo geométrico ─────────────────────────────────────────────────────────
+function DecorativeBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-
-      {/* Grade SVG horizontal + vertical */}
+      <div className="absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full
+        border border-lime-500/10 bg-gradient-to-tl from-lime-500/5 to-transparent" />
+      <div className="absolute -bottom-20 -right-20 w-[380px] h-[380px] rounded-full
+        border border-lime-400/8" />
+      <div className="absolute -top-32 -left-32 w-[380px] h-[380px] rounded-full
+        border border-lime-500/8 bg-gradient-to-br from-lime-500/4 to-transparent" />
+      <svg className="absolute left-10 top-1/2 -translate-y-1/2 w-36 h-36 opacity-[0.05]" viewBox="0 0 100 100">
+        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          fill="none" stroke="#a3e635" strokeWidth="1.5" />
+      </svg>
+      <svg className="absolute right-16 top-16 w-20 h-20 opacity-[0.05]" viewBox="0 0 100 100">
+        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          fill="none" stroke="#a3e635" strokeWidth="2" />
+      </svg>
       <svg className="absolute inset-0 w-full h-full opacity-[0.04]">
         <defs>
-          <pattern id="tech-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="0.8" />
+          <pattern id="proj-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="14" cy="14" r="1" fill="white" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#tech-grid)" />
+        <rect width="100%" height="100%" fill="url(#proj-dots)" />
       </svg>
-
-      {/* Linhas diagonais de acento */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.025]">
-        <defs>
-          <pattern id="tech-diag" width="80" height="80" patternUnits="userSpaceOnUse">
-            <path d="M 0 80 L 80 0" fill="none" stroke="#a3e635" strokeWidth="0.8" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#tech-diag)" />
-      </svg>
-
-      {/* Ponto nos cruzamentos da grade */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.06]">
-        <defs>
-          <pattern id="tech-dots" width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="0" cy="0" r="1.2" fill="#a3e635" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#tech-dots)" />
-      </svg>
-
-      {/* Glow de acento — topo centro */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px]
-        bg-lime-500/6 rounded-full blur-3xl" />
-
-      {/* Glow secundário — canto inferior direito */}
-      <div className="absolute -bottom-16 -right-16 w-72 h-72
-        bg-lime-400/5 rounded-full blur-3xl" />
-
-      {/* Linha de separação topo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[700px] h-[300px] bg-lime-500/4 rounded-full blur-3xl" />
       <div className="absolute top-0 inset-x-0 h-1
-        bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
+        bg-gradient-to-r from-transparent via-lime-500/25 to-transparent" />
     </div>
   );
 }
@@ -242,14 +226,14 @@ function SectionHeader() {
     >
       <h2
         id="habilidades-title"
-        className="text-4xl md:text-5xl font-bold text-slate-100 mb-4 tracking-tight"
+        className="text-3xl md:text-4xl font-bold text-slate-100 mb-4 tracking-tight"
       >
         Minhas <span className="text-lime-400">Habilidades</span>
       </h2>
       <div className="flex justify-center mb-5">
         <div className="h-1 w-24 bg-lime-600 rounded-full" />
       </div>
-      <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+      <p className="text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
         Aqui estão minhas principais habilidades e tecnologias — além de outras
         que tenho experiência e estou sempre aprimorando!
       </p>
@@ -268,7 +252,7 @@ export default function SkillSection() {
       aria-labelledby="habilidades-title"
       className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 sm:py-28 overflow-hidden"
     >
-      <TechGridBackground />
+      <DecorativeBackground />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
 

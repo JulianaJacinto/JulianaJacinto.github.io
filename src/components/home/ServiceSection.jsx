@@ -129,7 +129,7 @@ function TechGridBackground() {
         w-80 h-80 bg-lime-400/4 rounded-full blur-3xl" />
 
       {/* Linha separadora topo */}
-      <div className="absolute top-0 inset-x-0 h-px
+      <div className="absolute top-0 inset-x-0 h-1
         bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
     </div>
   );
@@ -257,12 +257,12 @@ function SectionHeader() {
         <div className="w-1 h-10 bg-gradient-to-b from-lime-400 to-lime-600 rounded-full" />
         <h2
           id="servicos-title"
-          className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight"
+          className="text-3xl md:text-4xl font-bold text-slate-100 tracking-tight"
         >
           O que posso <span className="text-lime-400">oferecer</span>
         </h2>
       </div>
-      <p className="text-slate-400 text-lg ml-4 pl-3 border-l border-slate-800">
+      <p className="text-slate-400 text-base ml-4 pl-3 border-l border-slate-800">
         Serviços pensados para transformar suas ideias em produtos digitais reais.
       </p>
     </div>
@@ -325,11 +325,11 @@ export default function ServicesSection() {
             }}
             className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-3
               bg-lime-500 hover:bg-lime-400 text-slate-900
-              font-semibold rounded-full shadow-lg shadow-lime-500/20
-              hover:shadow-lime-400/30 hover:scale-105
+              font-semibold rounded-full shadow-lg shadow-lime-600/20
+              hover:shadow-lime-500/30 hover:scale-105
               transition-all duration-300 whitespace-nowrap"
           >
-            Falar sobre meu projeto
+            Falar sobre seu projeto
           </a>
         </div>
       </div>

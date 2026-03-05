@@ -116,7 +116,7 @@ function ProfileImageCard() {
         bg-slate-900 border border-lime-500/30
         shadow-lg shadow-black/40 text-sm font-semibold text-lime-400">
         <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-        Disponível p/ projetos
+        Desenvolvedora Front-End
       </div>
     </div>
   );
@@ -142,12 +142,12 @@ export default function AboutSection() {
             <div className="w-1 h-10 bg-lime-600 rounded-full" aria-hidden="true" />
             <h2
               id="sobre-title"
-              className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight"
+              className="text-3xl md:text-4xl font-bold text-slate-100 tracking-tight"
             >
               Sobre <span className="text-lime-400">Mim</span>
             </h2>
           </div>
-          <p className="text-slate-400 text-lg ml-4 pl-3 border-l border-slate-800">
+          <p className="text-slate-400 text-base ml-4 pl-3 border-l border-slate-800">
             Conheça um pouco mais sobre mim e da minha trajetória profissional!
           </p>
         </div>

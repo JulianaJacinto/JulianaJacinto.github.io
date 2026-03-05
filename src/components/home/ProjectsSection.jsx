@@ -6,8 +6,8 @@ import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import ProjectCard from "./ProjectCard";
-import projects from "../data/projects";
+import ProjectCard from "../ProjectCard";
+import projects from "../../data/projects";
 
 const PREV_ID = "projects-prev";
 const NEXT_ID = "projects-next";
@@ -34,49 +34,48 @@ function useInView(options = {}) {
   return { ref, inView };
 }
 
-// ─── Fundo: grade tech (mesmo padrão da seção Skills) ────────────────────────
-function TechGridBackground() {
+function DecorativeBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      {/* Grade ortogonal */}
+
+      {/* Círculo grande — canto superior direito */}
+      <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full
+        border border-lime-500/10 bg-gradient-to-br from-lime-500/5 to-transparent" />
+      <div className="absolute -top-16 -right-16 w-[360px] h-[360px] rounded-full
+        border border-lime-400/8" />
+
+      {/* Círculo médio — canto inferior esquerdo */}
+      <div className="absolute -bottom-40 -left-24 w-[400px] h-[400px] rounded-full
+        border border-lime-500/10 bg-gradient-to-tr from-lime-500/5 to-transparent" />
+
+      {/* Hexágono SVG — centro-direita */}
+      <svg className="absolute right-8 top-1/3 w-40 h-40 opacity-[0.06]" viewBox="0 0 100 100">
+        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          fill="none" stroke="#a3e635" strokeWidth="1.5" />
+      </svg>
+
+      {/* Hexágono menor — esquerda */}
+      <svg className="absolute left-6 top-1/4 w-20 h-20 opacity-[0.06]" viewBox="0 0 100 100">
+        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          fill="none" stroke="#a3e635" strokeWidth="2" />
+      </svg>
+
+      {/* Grid de pontos sutil */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.04]">
         <defs>
-          <pattern id="journey-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="0.8" />
+          <pattern id="about-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="14" cy="14" r="1" fill="white" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#journey-grid)" />
+        <rect width="100%" height="100%" fill="url(#about-dots)" />
       </svg>
 
-      {/* Diagonais lime */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.025]">
-        <defs>
-          <pattern id="journey-diag" width="80" height="80" patternUnits="userSpaceOnUse">
-            <path d="M 0 80 L 80 0" fill="none" stroke="#a3e635" strokeWidth="0.8" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#journey-diag)" />
-      </svg>
-
-      {/* Pontos nos cruzamentos */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.06]">
-        <defs>
-          <pattern id="journey-dots" width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="0" cy="0" r="1.2" fill="#a3e635" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#journey-dots)" />
-      </svg>
-
-      {/* Glows */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[260px]
+      {/* Glow de acento lime */}
+      <div className="absolute top-0 right-1/4 w-72 h-72
         bg-lime-500/5 rounded-full blur-3xl" />
-      <div className="absolute -bottom-16 right-0 w-72 h-72
-        bg-lime-400/4 rounded-full blur-3xl" />
-
-      {/* Linha separadora topo */}
+      
       <div className="absolute top-0 inset-x-0 h-1
-        bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
+        bg-gradient-to-r from-transparent via-lime-500/25 to-transparent" />
     </div>
   );
 }
@@ -158,7 +157,7 @@ export default function ProjectsSection() {
       aria-labelledby="projetos-title"
       className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 sm:py-28 overflow-hidden"
     >
-      <TechGridBackground />
+      <DecorativeBackground />
 
       <style>{`
         .projects-swiper .swiper-button-next::after,
@@ -192,12 +191,12 @@ export default function ProjectsSection() {
               <div className="w-1 h-10 bg-gradient-to-b from-lime-400 to-lime-600 rounded-full" />
               <h2
                 id="projetos-title"
-                className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight"
+                className="text-3xl md:text-4xl font-bold text-slate-100 tracking-tight"
               >
                 Projetos <span className="text-lime-400">Desenvolvidos</span>
               </h2>
             </div>
-            <p className="text-slate-400 text-lg ml-4 pl-3 border-l border-slate-800">
+            <p className="text-slate-400 text-base ml-4 pl-3 border-l border-slate-800">
               Explore meus projetos acadêmicos e profissionais.
             </p>
           </div>

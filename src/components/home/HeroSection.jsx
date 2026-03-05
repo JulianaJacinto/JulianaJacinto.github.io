@@ -62,10 +62,9 @@ function ProfileImage() {
 
   return (
     <div className="relative w-96 h-96 md:w-[420px] md:h-[420px] ">
-      {/* Glow de fundo */}
+
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lime-500/30 to-emerald-500/20 blur-2xl scale-110" />
 
-      {/* Anel interno fixo */}
       <div className="absolute inset-1 rounded-full border border-lime-500/20 z-20 pointer-events-none" />
 
       {/* Container da imagem */}
@@ -144,7 +143,6 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Keyframes globais da seção */}
       <style>{`
         @keyframes heroFloat {
           0%, 100% { transform: translateY(0); }
@@ -160,7 +158,6 @@ export default function HeroSection() {
         }
       `}</style>
 
-      {/* ─── id corrigido: "inicio" ────────────────────────────────────────── */}
       <section
         id="inicio"
         className="relative min-h-[720px] flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-lime-900 px-6 py-16 overflow-hidden pt-24 md:pt-32"
@@ -181,7 +178,7 @@ export default function HeroSection() {
         <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* ── Coluna de texto ───────────────────────────────────────────── */}
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-4 md:space-y-5">
 
             {/* Badge */}
             <div style={{ animation: "heroFadeUp 0.6s ease-out 0.1s both" }}>
@@ -190,7 +187,7 @@ export default function HeroSection() {
 
             {/* Nome */}
             <div style={{ animation: "heroFadeUp 0.6s ease-out 0.2s both" }}>
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent">
                   Juliana Jacinto
                 </span>
