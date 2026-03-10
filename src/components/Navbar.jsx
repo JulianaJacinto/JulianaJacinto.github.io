@@ -121,7 +121,7 @@ function MobileMenu({ isOpen, onClose, activeSection, onNavigate }) {
 
             {/* Botão baixar currículo */}
             <a
-              href="src/assets/JulianaJacinto_curriculo2026.pdf"
+              href="/doc/JulianaJacinto_curriculo.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -268,7 +268,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <a
-              href="./assets/JulianaJacinto_curriculo2026.pdf"
+              href="/doc/JulianaJacinto_curriculo.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
